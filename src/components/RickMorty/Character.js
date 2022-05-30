@@ -1,7 +1,9 @@
 
 
 import React from 'react'
+import { Row } from 'react-bootstrap';
 import { useQuery } from 'react-query';
+import CardView from './CardView';
 
 const KEYS = {
     CHARACTERS: "characters"
@@ -20,12 +22,13 @@ export default function Character() {
     if(status === "error"){
         return <div>Error... </div>
     }
+    console.log(data)
     return (
-        <div>
+        <Row>
             {data && data.results.map(item => (
-                <div key={item.name}>{item.name}</div>
+                <CardView key={item.name} character={item} />
             ))}
-        </div>
+        </Row>
 
 
     )

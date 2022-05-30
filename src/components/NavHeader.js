@@ -11,7 +11,7 @@ export default function NavHeader() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <Link className='nav-link' to="/Pokemon">Pokemon</Link>
-          <Link className='nav-link' to="/RickMorty">Rick &amp; Morty</Link>
+          <Link className='nav-link' to="/Rick&Morty">Rick &amp; Morty</Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
