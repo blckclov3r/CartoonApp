@@ -6,6 +6,7 @@ import { Row } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
+import PrevNextButton from './PrevNextButton';
 
 const KEYS = {
     CHARACTERS: "characters"
@@ -23,7 +24,8 @@ export default function Character() {
   
     const nextPage = () =>{
         setPageNumber(
-             p => Math.min(p+=1,42)
+             p => Math.min(p+=1,data && Math.ceil(data && data.info.count / 20)
+             )
         )
     }
 
@@ -55,15 +57,7 @@ export default function Character() {
   
     return (
         <div>
-            <ul className="pagination">
-                    <li className={data && data.info.prev === null ? ["page-item","disabled"].join(" ") : "page-item"} onClick={prevPage} disabled={ !data || !isSuccess || pageNumber === 1}>
-                       <span role="button" className="page-link">Previous</span>
-                    </li>
-                    <li className="page-item"><span  className="page-link">{pageNumber}</span></li>
-                    <li  className={data && data.info.next === null ? ["page-item","disabled"].join(" ") : "page-item"} onClick={nextPage} disabled={!data || !isSuccess}>
-                       <span role="button" className="page-link">Next</span>
-                    </li>
-            </ul>
+            <PrevNextButton data={data && data.results} prevPage={prevPage} nextPage={nextPage} pageNumber={pageNumber} />
             <Row>
                 {data && data.results.map(item => (
                     <CardView key={item.id} character={item} />
@@ -96,8 +90,6 @@ export default function Character() {
                 disabledClassName={"disabled"}
 
                 activeClassName={"active"}
-                
-           
             />
         </div>
     )
