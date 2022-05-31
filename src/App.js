@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './components/Home';
 import Pokemon from './components/Pokemon/Pokemon';
 import RickMorty from './components/RickMorty/Rick&Morty';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                   <Route path="/Rick&Morty" element={<RickMorty />} />
               </Routes>
           </div>
+          <Footer />
       </div>
     </BrowserRouter>
   );

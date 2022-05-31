@@ -6,7 +6,7 @@ import Character from './Character';
 
 export default function RickMorty() {
   return (
-      <Container fluid="md" className='mt-5 pt-4'>
+      <Container fluid="md" className='my-5 pt-5'>
         <Character />
       </Container>
   )
