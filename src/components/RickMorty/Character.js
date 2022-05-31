@@ -14,7 +14,7 @@ const KEYS = {
 
 export default function Character() {
 
-    const [pageNumber, setPageNumber] = useState(1);
+    const [pageNumber, setPageNumber] = useState(41);
 
     const fetchCharacters = async ({ queryKey }) => {
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`);
@@ -23,22 +23,30 @@ export default function Character() {
     const { data,  isLoading, isError, isSuccess} = useQuery([KEYS.CHARACTERS, pageNumber], fetchCharacters);
   
     const nextPage = () =>{
-        setPageNumber(
-             p => Math.min(p+=1,data && Math.ceil(data && data.info.count / 20)
-             )
-        )
+        if(!isLoading){
+            setPageNumber(
+                p => Math.min(p+=1,data && Math.ceil(data && data.info.count / 20)
+                )
+           )
+        }
     }
 
     const prevPage = () =>{
-        setPageNumber(p => Math.max(p-=1,1));
+        if(!isLoading){
+            setPageNumber(p => Math.max(p-=1,1));
+            console.log("isLoading",isLoading)
+        }
+       
     }
 
    
     const changePage = ({selected})=>{
-        if(selected === 1 || selected === 0){
-            selected = 1;
+        if(!isLoading){
+            if(selected === 1 || selected === 0){
+                selected = 1;
+            }
+            setPageNumber(Math.max(selected+=1,1))
         }
-        setPageNumber(Math.max(selected+=1,1))
     }
 
     useEffect(()=>{
@@ -57,16 +65,15 @@ export default function Character() {
   
     return (
         <div>
-            <PrevNextButton data={data && data.results} prevPage={prevPage} nextPage={nextPage} pageNumber={pageNumber} />
+            <PrevNextButton data={data ? data.results : null} prevPage={prevPage} nextPage={nextPage} pageNumber={pageNumber} />
             <Row>
                 {data && data.results.map(item => (
-                    <CardView key={item.id} character={item} />
+                    <CardView key={item.id} character={item} isLoading={isLoading}/>
                 ))}
             </Row>
             <ReactPaginate 
                 disableInitialCallback={ true }
-                initialPage={ 1 }
-                forcePage={data && pageNumber-1}
+                forcePage={pageNumber-1}
                 containerClassName={"pagination justify-content-center pt-5 mt-3"}
 
                 previousLabel={'Prev'}
