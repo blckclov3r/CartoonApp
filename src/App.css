@@ -1,4 +1,6 @@
 body{
-    background-color: #f1f1f1;
     background: url("../public/img/bgslash.png");
+    background-color: #f1f1f1;
+    background-attachment: fixed;
+    font: 1rem open sans,sans-serif;
 }

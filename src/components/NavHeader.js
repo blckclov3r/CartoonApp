@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function NavHeader() {
   return (
-    <Navbar bg="light" expand="lg" className='shadow-sm'>
+    <Navbar bg="light" expand="lg" className='shadow-sm' fixed="top">
     <Container>
       <Link className='navbar-brand' to='/'>FETCH JSON REACT</Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
