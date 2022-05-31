@@ -15,7 +15,7 @@ const KEYS = {
 export default function Character() {
 
     const [characterSearch, setCharacterSearch] = useState('');
-    const [pageNumber, setPageNumber] = useState(41);
+    const [pageNumber, setPageNumber] = useState(1);
 
     const fetchCharacters = async ({ queryKey }) => {
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`);
@@ -42,11 +42,8 @@ export default function Character() {
 
    
     const changePage = ({selected})=>{
-        if(!isLoading){
-            if(selected === 1 || selected === 0){
-                selected = 1;
-            }
-            setPageNumber(Math.max(selected+=1,1))
+        if(data && !isLoading){
+            setPageNumber(selected+=1)
         }
     }
 
@@ -74,7 +71,7 @@ export default function Character() {
                 <div>
                 <InputGroup>
                   <Form.Control placeholder='Search' value={characterSearch} onChange={evt => setCharacterSearch(evt.target.value)}   />
-                  <InputGroup.Text><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <InputGroup.Text><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 </svg></InputGroup.Text>
               </InputGroup>
@@ -92,7 +89,7 @@ export default function Character() {
                 ))}
             </Row>
             <ReactPaginate 
-                forcePage={pageNumber-1}
+                forcePage={data && (pageNumber-1)}
                 containerClassName={"pagination justify-content-center pt-5 mt-3"}
                 previousLabel={'Prev'}
                 previousClassName={'page-item'}
