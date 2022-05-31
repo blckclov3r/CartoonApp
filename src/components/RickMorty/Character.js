@@ -15,7 +15,6 @@ export default function Character() {
     const [pageNumber, setPagNumber] = useState(1);
 
     const fetchCharacters = async ({ queryKey }) => {
-        // console.log(queryKey[1])
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`);
         return response.json();
     }
