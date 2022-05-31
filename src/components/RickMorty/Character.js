@@ -65,29 +65,25 @@ export default function Character() {
   
     return (
         <div>
-            <PrevNextButton data={data ? data.results : null} prevPage={prevPage} nextPage={nextPage} pageNumber={pageNumber} />
+            <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} pageNumber={pageNumber} />
             <Row>
-                {data && data.results.map(item => (
+                {(!isLoading && data) && data.results.map(item => (
                     <CardView key={item.id} character={item} isLoading={isLoading}/>
                 ))}
             </Row>
             <ReactPaginate 
-                disableInitialCallback={ true }
                 forcePage={pageNumber-1}
                 containerClassName={"pagination justify-content-center pt-5 mt-3"}
-
                 previousLabel={'Prev'}
                 previousClassName={'page-item'}
                 nextLabel={'Next'}
                 nextClassName={'page-item'}
-
                 pageClassName={'page-item'}
                 pageLinkClassName={'page-link'}
                 breakClassName={'page-item'}
                 breakLinkClassName={'page-link'}
                 marginPagesDisplayed={0}
                 pageRangeDisplayed={9}
-
                 pageCount={data && Math.ceil(data && data.info.count / 20)} // total characters / 20 character per page
                 onPageChange={changePage}
                 
