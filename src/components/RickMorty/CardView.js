@@ -4,9 +4,9 @@ import React from 'react'
 
 export default function CardView({character}) {
   return (
-   
+     
       <Col className='my-2'>
-         <Card style={{ width: '18rem' }} className="h-100 shadow-sm">
+         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
             <Card.Img variant="top" src={character.image} className="img-fluid img-thumbnail" />
             <Card.Header className='d-flex align-items-center'>
                 Status: {character.status === "Alive" ? <Badge className='ms-1' bg="success">Alive</Badge> : <Badge className='ms-1' bg="danger">Dead</Badge>}

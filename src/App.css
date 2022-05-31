@@ -4,3 +4,7 @@ body{
     background-attachment: fixed;
     font: 1rem open sans,sans-serif;
 }
+
+body,html {
+    height:100%;
+}
