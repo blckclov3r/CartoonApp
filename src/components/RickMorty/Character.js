@@ -29,7 +29,5 @@ export default function Character() {
                 <CardView key={item.name} character={item} />
             ))}
         </Row>
-
-
     )
 }
