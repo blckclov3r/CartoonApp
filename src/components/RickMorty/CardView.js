@@ -16,7 +16,7 @@ export default function CardView({character}) {
                 <Card.Text>
                     <span className='small'>Gender: {character.gender}</span> - <span className='small'>{character.species}</span> <br/>
                     <span className='small'>Origin: {character.origin.name}</span>  <br/>
-                    <span className='small'>Location: {character.location.name}</span>  
+                    <span className='small'>Last seen: {character.location.name}</span>  
                 </Card.Text>
             </Card.Body>
         </Card>
