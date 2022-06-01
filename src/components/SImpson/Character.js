@@ -92,7 +92,7 @@ export default function Character() {
                 onPageChange={changePage}
 
                 previousLinkClassName={pageNumber === 1 ? ["page-link", "disabled"].join(" ") : "page-link"}
-                nextLinkClassName={pageNumber === 50 ? ["page-link", "disabled"].join(" ") : "page-link"}
+                nextLinkClassName={pageNumber === (data && data.length) ? ["page-link", "disabled"].join(" ") : "page-link"}
                 disabledClassName={"disabled"}
 
                 activeClassName={"active"}

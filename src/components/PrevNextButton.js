@@ -3,7 +3,6 @@
 import React from 'react'
 
 export default function PrevNextButton({data,prevPage,nextPage,pageNumber,max}) {
-   
   return (
     <div>
         <ul className="pagination">
