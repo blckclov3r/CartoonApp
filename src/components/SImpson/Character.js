@@ -65,7 +65,12 @@ export default function Character() {
 
             </div>
             <Row>
-                {data && displayCharacter.map((item, index) => (
+                {data && displayCharacter.filter((val)=>{
+                       if (characterSearch.trim() === "") {
+                        return val;
+                    }
+                    return val.character.trim().toLowerCase().includes(characterSearch.trim().toLocaleLowerCase());
+                }).map((item, index) => (
                     <CardView {...item} key={item.quote + " " + index} />
                 ))}
             </Row>
