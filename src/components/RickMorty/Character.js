@@ -1,7 +1,7 @@
 
 
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Row, InputGroup, Form } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import CardView from './CardView';
@@ -22,10 +22,10 @@ export default function Character() {
         return response.json();
     }
     
-    const { data, isLoading, isError, isSuccess } = useQuery([KEYS.CHARACTERS, pageNumber], fetchCharacters);
+    const { data } = useQuery([KEYS.CHARACTERS, pageNumber], fetchCharacters);
 
     const nextPage = () => {
-        if (!isLoading) {
+        if (data) {
             setPageNumber(
                 p => Math.min(p += 1, data && Math.ceil(data && data.info.count / 20)
                 )
@@ -34,7 +34,7 @@ export default function Character() {
     }
 
     const prevPage = () => {
-        if (!isLoading) {
+        if (CharacterData) {
             setPageNumber(p => Math.max(p -= 1, 1));
         }
 
@@ -42,7 +42,7 @@ export default function Character() {
 
 
     const changePage = ({ selected }) => {
-        if (data && !isLoading) {
+        if (data) {
             setPageNumber(selected += 1)
         }
     }
@@ -67,13 +67,13 @@ export default function Character() {
 
             </div>
             <Row className='mx-auto'>
-                {(!isLoading && data) && data.results.filter((val) => {
+                {( data) && data.results.filter((val) => {
                     if (characterSearch.trim() === "") {
                         return val;
                     }
                     return val.name.trim().toLowerCase().includes(characterSearch.trim().toLocaleLowerCase());
                 }).map(item => (
-                    <CardView key={item.image} character={item} isLoading={isLoading} />
+                    <CardView key={item.image} character={item}  />
                 ))}
             </Row>
             <ReactPaginate
