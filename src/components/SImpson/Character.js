@@ -1,33 +1,34 @@
 
 
-
-import React, { useEffect, useState } from 'react'
-import { Row, InputGroup, Form } from 'react-bootstrap';
+import { Row,InputGroup, Form } from 'react-bootstrap';
 import { useQuery } from 'react-query';
+import PrevNextButton from '../PrevNextButton';
 import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
-import PrevNextButton from '../PrevNextButton';
-
-const KEYS = {
-    CHARACTERS: "rick&morty"
-}
-
+import { useState } from 'react';
 export default function Character() {
 
-    const [characterSearch, setCharacterSearch] = useState('');
     const [pageNumber, setPageNumber] = useState(1);
+    const [characterSearch, setCharacterSearch] = useState('')
 
-    const fetchCharacters = async ({ queryKey }) => {
-        const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`);
+    const fetchData = async () => {
+        const response = await fetch("https://thesimpsonsquoteapi.glitch.me/quotes?count=50&character");
         return response.json();
     }
-    
-    const { data, isLoading, isError, isSuccess } = useQuery([KEYS.CHARACTERS, pageNumber], fetchCharacters);
 
+    const { data, isLoading } = useQuery("simpson", fetchData);
+
+  
+
+    const characterPerPage = 10;
+    const pagePerVisited = pageNumber * characterPerPage;
+    const displayCharacter = data && data.slice(pagePerVisited, pagePerVisited + characterPerPage);
+
+  
     const nextPage = () => {
         if (!isLoading) {
             setPageNumber(
-                p => Math.min(p += 1, data && Math.ceil(data && data.info.count / 20)
+                p => Math.min(p += 1, data && Math.ceil(data && data.length / 20)
                 )
             )
         }
@@ -41,26 +42,12 @@ export default function Character() {
 
     }
 
-
-    const changePage = ({ selected }) => {
-        if (data && !isLoading) {
+    
+    const changePage =  ({selected}) => {
+        if (data) {
             setPageNumber(selected += 1)
         }
     }
-
-
-    useEffect(() => {
-        if (isLoading) {
-            console.log("Loading --", isLoading)
-        }
-        if (isError) {
-            console.log("Error --", isError);
-        }
-        if (isSuccess) {
-            console.log("isSuccess --", isSuccess);
-        }
-    }, [data, isError, isLoading, isSuccess])
-
 
     return (
         <div>
@@ -78,18 +65,14 @@ export default function Character() {
                 </div>
 
             </div>
-            <Row className='mx-auto'>
-                {(!isLoading && data) && data.results.filter((val) => {
-                    if (characterSearch.trim() === "") {
-                        return val;
-                    }
-                    return val.name.trim().toLowerCase().includes(characterSearch.trim().toLocaleLowerCase());
-                }).map(item => (
-                    <CardView key={item.image} character={item} isLoading={isLoading} />
+            <Row>
+                {data && displayCharacter.map((item, index) => (
+                    <CardView {...item} key={item.quote + " " + index} />
                 ))}
             </Row>
+            
             <ReactPaginate
-                forcePage={data && (pageNumber - 1)}
+                // forcePage={data && (pageNumber - 1)}
                 containerClassName={"pagination justify-content-center pt-5 mt-3"}
                 previousLabel={'Prev'}
                 previousClassName={'page-item'}
@@ -99,23 +82,18 @@ export default function Character() {
                 pageLinkClassName={'page-link'}
                 breakClassName={'page-item'}
                 breakLinkClassName={'page-link'}
-                marginPagesDisplayed={0}
-                pageRangeDisplayed={9}
-                pageCount={data && Math.ceil(data && data.info.count / 20)} // total characters / 20 character per page
+                // marginPagesDisplayed={0}
+                // pageRangeDisplayed={9}
+                pageCount={data && Math.ceil(data.length / 20)} // total characters / 20  (2.5 = 3 pages)
                 onPageChange={changePage}
 
-
-                previousLinkClassName={data && data.info.prev === null ? ["page-link", "disabled"].join(" ") : "page-link"}
-                nextLinkClassName={data && data.info.next === null ? ["page-link", "disabled"].join(" ") : "page-link"}
+                previousLinkClassName={pageNumber === 1 ? ["page-link", "disabled"].join(" ") : "page-link"}
+                nextLinkClassName={pageNumber === 50 ? ["page-link", "disabled"].join(" ") : "page-link"}
                 disabledClassName={"disabled"}
 
                 activeClassName={"active"}
             />
         </div>
-    )
-
-
-
+           )
+    
 }
-
-

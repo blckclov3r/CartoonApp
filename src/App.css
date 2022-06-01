@@ -20,3 +20,10 @@ img {
     max-width:100%;
     height: auto
 }
+
+.card:hover{
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.009);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
