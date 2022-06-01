@@ -10,8 +10,9 @@ export default function NavHeader() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Link className='nav-link' to="/Pokemon">Pokemon</Link>
-          <Link className='nav-link' to="/Rick&Morty">Rick &amp; Morty</Link>
+        <Link className='nav-link' to="/Cartoon">Cartoon</Link>
+          <Link className='nav-link' to="/Rick&Morty">R&Morty</Link>
+          <Link className='nav-link' to="/Simpson">Simpson</Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

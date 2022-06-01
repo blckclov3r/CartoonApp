@@ -2,9 +2,10 @@ import './App.css';
 import NavHeader from './components/NavHeader';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './components/Home';
-import Pokemon from './components/Pokemon/Pokemon';
 import RickMorty from './components/RickMorty/Rick&Morty';
 import Footer from './components/Footer';
+import Simpson from './components/SImpson/Simpson';
+import Cartoon from './components/Cartoons/Cartoon';
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
           <div className='main'>
               <Routes>
                   <Route exact path="/" element={<Home />} />
-                  <Route path="/Pokemon" element={<Pokemon />} />
+                  <Route path="/Cartoon" element={<Cartoon />} />
                   <Route path="/Rick&Morty" element={<RickMorty />} />
+                  <Route path="/Simpson" element={<Simpson />} />
               </Routes>
           </div>
           <Footer />

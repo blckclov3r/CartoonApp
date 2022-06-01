@@ -6,7 +6,7 @@ import { Row, InputGroup, Form } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
-import PrevNextButton from './PrevNextButton';
+import PrevNextButton from '../PrevNextButton';
 
 const KEYS = {
     CHARACTERS: "characters"

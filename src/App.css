@@ -15,3 +15,8 @@ body{
 footer{
     margin-top: auto;
 }
+
+img {
+    max-width:100%;
+    height: auto
+}
