@@ -13,9 +13,12 @@ export default function Home() {
 
   
   const {data, isLoading, isError} = useQuery("home",fetchData);
-  const [useData, setUseData] = useState(null);
+  const [useData, setUseData] = useState();
 
   function getRandomInt (min, max) {
+      if(isLoading || isError){
+        return 1;
+      }
       return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
@@ -24,10 +27,10 @@ export default function Home() {
     <Container fluid="md" className='d-flex text-center mt-5 pt-5 h-100 justify-content-center align-items-center flex-column'>
 
         <div className='pt-5' style={{width: "835px"}}>
-          {data ? <h2>{!useData ? data[getRandomInt(1,50)].quote : useData}</h2> : <h2>Loading...</h2> } 
+          {data ? <h2>{ useData == null ? data[getRandomInt(1,50)].quote : useData }</h2> : <h2>Loading...</h2> } 
         </div>
     
-        <button className='btn btn-primary mt-4' disabled={(!data || isLoading || isError)} style={{width: "200px"}} onClick={()=>{
+        <button className='btn btn-primary mt-4' disabled={data ? false : true} style={{width: "200px"}} onClick={()=>{
             setUseData(data[getRandomInt(1,50)].quote);
         }}>Generate</button>
       
