@@ -11,7 +11,7 @@ function App() {
      <BrowserRouter>
       <div className="App">
           <NavHeader />
-          <div className='content-route'>
+          <div className='main'>
               <Routes>
                   <Route exact path="/" element={<Home />} />
                   <Route path="/Pokemon" element={<Pokemon />} />
