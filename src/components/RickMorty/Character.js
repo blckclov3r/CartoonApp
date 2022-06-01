@@ -36,7 +36,6 @@ export default function Character() {
     const prevPage = () => {
         if (!isLoading) {
             setPageNumber(p => Math.max(p -= 1, 1));
-            console.log("isLoading", isLoading)
         }
 
     }
@@ -49,17 +48,6 @@ export default function Character() {
     }
 
 
-    useEffect(() => {
-        if (isLoading) {
-            console.log("Loading --", isLoading)
-        }
-        if (isError) {
-            console.log("Error --", isError);
-        }
-        if (isSuccess) {
-            console.log("isSuccess --", isSuccess);
-        }
-    }, [data, isError, isLoading, isSuccess])
 
 
     return (

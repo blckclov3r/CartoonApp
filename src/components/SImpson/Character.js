@@ -37,7 +37,6 @@ export default function Character() {
     const prevPage = () => {
         if (!isLoading) {
             setPageNumber(p => Math.max(p -= 1, 1));
-            console.log("isLoading", isLoading)
         }
 
     }
@@ -53,7 +52,7 @@ export default function Character() {
         <div>
             <div className='d-flex justify-content-between align-items-baseline'>
                 <div>
-                    <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} max={Math.ceil(data && data.info.count / 20)} pageNumber={pageNumber} />
+                    <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} max={Math.ceil(data && data.length / 20)} pageNumber={pageNumber} />
                 </div>
                 <div>
                     <InputGroup>
