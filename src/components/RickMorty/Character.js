@@ -76,7 +76,7 @@ export default function Character() {
                     <CardView key={item.image} character={item}  />
                 ))}
             </Row>
-            <ReactPaginate
+          { data &&  <ReactPaginate
                 forcePage={data && (pageNumber - 1)}
                 containerClassName={"pagination justify-content-center pt-5 mt-3"}
                 previousLabel={'Prev'}
@@ -98,7 +98,7 @@ export default function Character() {
                 disabledClassName={"disabled"}
 
                 activeClassName={"active"}
-            />
+            />}
         </div>
     )
 
