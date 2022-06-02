@@ -76,7 +76,7 @@ export default function Character() {
             </Row>
             
             <ReactPaginate
-                // forcePage={data && (pageNumber - 1)}
+                forcePage={data && (pageNumber - 1)}
                 containerClassName={"pagination justify-content-center pt-5 mt-3"}
                 previousLabel={'Prev'}
                 previousClassName={'page-item'}
