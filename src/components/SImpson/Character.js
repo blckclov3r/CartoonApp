@@ -6,14 +6,16 @@ import PrevNextButton from '../PrevNextButton';
 import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
 import { useState } from 'react';
+import  axios from 'axios';
+
 export default function Character() {
 
     const [pageNumber, setPageNumber] = useState(1);
     const [characterSearch, setCharacterSearch] = useState('')
 
-    const fetchData = async () => {
-        const response = await fetch("https://thesimpsonsquoteapi.glitch.me/quotes?count=50&character");
-        return response.json();
+    const fetchData =  async () => {
+        const response = await axios.get("https://thesimpsonsquoteapi.glitch.me/quotes?count=50&character");
+        return response.data;
     }
 
     const { data } = useQuery("simpson", fetchData);

@@ -7,6 +7,7 @@ import { useQuery } from 'react-query';
 import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
 import PrevNextButton from '../PrevNextButton';
+import axios from 'axios';
 
 const KEYS = {
     CHARACTERS: "rick&morty"
@@ -18,8 +19,8 @@ export default function Character() {
     const [pageNumber, setPageNumber] = useState(1);
 
     const fetchCharacters = async ({ queryKey }) => {
-        const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`);
-        return response.json();
+        const response = await axios.get(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`);
+        return response.data;
     }
     
     const { data } = useQuery([KEYS.CHARACTERS, pageNumber], fetchCharacters);

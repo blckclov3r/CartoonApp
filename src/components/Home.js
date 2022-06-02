@@ -2,13 +2,14 @@
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { useQuery } from 'react-query';
-import {useState} from 'react'
+import { useState} from 'react'
+import axios from 'axios';
 export default function Home() {
 
 
   const fetchData = async () =>{
-     const response = await fetch("https://thesimpsonsquoteapi.glitch.me/quotes?count=50&character");
-     return response.json();
+     const response = await axios.get("https://thesimpsonsquoteapi.glitch.me/quotes?count=50&character");
+     return response.data;
   }
 
   
@@ -22,7 +23,6 @@ export default function Home() {
       return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  
   
   return (
     <Container className='vh-100'>

@@ -1,5 +1,6 @@
 
 
+import axios from 'axios';
 import {  useState } from 'react';
 import { InputGroup, Row, Form } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
@@ -13,8 +14,8 @@ export default function Character() {
   const [pageNumber, setPageNumber] = useState(1);
 
   const fetchData = async () => {
-    const response = await fetch('https://futuramaapi.herokuapp.com/api/v2/characters');
-    return response.json();
+    const response = await axios.get('https://futuramaapi.herokuapp.com/api/v2/characters');
+    return response.data;
   }
 
   const { data } = useQuery("futuramaapi", fetchData);
