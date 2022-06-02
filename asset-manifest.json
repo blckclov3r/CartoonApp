@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blckclov3r.github.io/fetch-json-react/static/css/main.56e0253d.css",
+    "main.js": "/blckclov3r.github.io/fetch-json-react/static/js/main.377fac30.js",
+    "index.html": "/blckclov3r.github.io/fetch-json-react/index.html",
+    "main.56e0253d.css.map": "/blckclov3r.github.io/fetch-json-react/static/css/main.56e0253d.css.map",
+    "main.377fac30.js.map": "/blckclov3r.github.io/fetch-json-react/static/js/main.377fac30.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56e0253d.css",
+    "static/js/main.377fac30.js"
+  ]
+}
