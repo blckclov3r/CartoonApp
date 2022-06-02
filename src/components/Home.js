@@ -23,6 +23,7 @@ export default function Home() {
   }
 
   
+  
   return (
     <Container fluid="md" className='d-flex text-center mt-5 pt-5 h-100 justify-content-center align-items-center flex-column'>
 
@@ -33,7 +34,7 @@ export default function Home() {
             </h2> } 
         </div>
     
-        <button className='btn btn-primary mt-4' disabled={data ? false : true} style={{width: "200px"}} onClick={()=>{
+        <button className={data ? 'btn btn-primary mt-4' : 'btn btn-primary mt-4 disabled'} disabled={data ? false : true} style={{width: "200px"}} onClick={()=>{
             setUseData(data[getRandomInt(1,50)].quote);
         }}>Generate</button>
       
