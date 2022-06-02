@@ -28,10 +28,11 @@ export default function Home() {
     <Container fluid="md" className='d-flex text-center mt-5 pt-5 h-100 justify-content-center align-items-center flex-column'>
 
         <div className='pt-5' style={{width: "835px"}}>
-          {data ? <h2>{ useData == null ? data[getRandomInt(1,50)].quote : useData }</h2> :
+          {data ? <h2>{  useData == null ? data[getRandomInt(1,50)].quote : useData }</h2> :
              <h2 className="placeholder-glow">
               <span className="placeholder col-5"></span>
-            </h2> } 
+            </h2> 
+            } 
         </div>
     
         <button className={data ? 'btn btn-primary mt-4' : 'btn btn-primary mt-4 disabled'} disabled={data ? false : true} style={{width: "200px"}} onClick={()=>{

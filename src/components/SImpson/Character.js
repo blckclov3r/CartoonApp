@@ -16,7 +16,7 @@ export default function Character() {
         return response.json();
     }
 
-    const { data, isLoading } = useQuery("simpson", fetchData);
+    const { data } = useQuery("simpson", fetchData);
 
   
 
@@ -26,7 +26,7 @@ export default function Character() {
 
   
     const nextPage = () => {
-        if (!isLoading) {
+        if (data) {
             setPageNumber(
                 p => Math.min(p += 1, data && Math.ceil(data && data.length / 20)
                 )
@@ -35,7 +35,7 @@ export default function Character() {
     }
 
     const prevPage = () => {
-        if (!isLoading) {
+        if (data) {
             setPageNumber(p => Math.max(p -= 1, 1));
         }
 
