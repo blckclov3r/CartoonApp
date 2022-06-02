@@ -29,7 +29,7 @@ export default function Home() {
         <Row fluid="md" className='h-100 d-flex justify-content-center flex-column'>
           <Col md={8} className="align-middle">
           <div  style={{wordWrap: "break-word",whiteSpace: "pre-line"}}>
-          {data ? <h2>{  useData == null ? data[getRandomInt(1,50)].quote : useData }</h2> :
+          {data ? <h2>{  useData == null ? data[0].quote : useData }</h2> :
              <h2 className="placeholder-glow">
               <span className="placeholder col-5"></span>
             </h2> 
