@@ -8,6 +8,7 @@ import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
 import PrevNextButton from '../PrevNextButton';
 import axios from 'axios';
+import CardViewLoader from '../CardViewLoader';
 
 const KEYS = {
     CHARACTERS: "rick&morty"
@@ -23,7 +24,7 @@ export default function Character() {
         return response.data;
     }
     
-    const { data } = useQuery([KEYS.CHARACTERS, pageNumber], fetchCharacters);
+    const { data, isLoading } = useQuery([KEYS.CHARACTERS, pageNumber], fetchCharacters);
 
     const nextPage = () => {
         if (data) {
@@ -76,6 +77,9 @@ export default function Character() {
                 }).map(item => (
                     <CardView key={item.image} character={item}  />
                 ))}
+                { (!data || isLoading) &&
+                    <CardViewLoader />
+                }
             </Row>
           { data &&  <ReactPaginate
                 forcePage={data && (pageNumber - 1)}

@@ -7,6 +7,7 @@ import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
 import { useState } from 'react';
 import  axios from 'axios';
+import CardViewLoader from '../CardViewLoader';
 
 export default function Character() {
 
@@ -18,7 +19,7 @@ export default function Character() {
         return response.data;
     }
 
-    const { data } = useQuery("simpson", fetchData);
+    const { data,isLoading } = useQuery("simpson", fetchData);
 
   
 
@@ -75,6 +76,7 @@ export default function Character() {
                 }).map((item, index) => (
                     <CardView {...item} key={item.quote + " " + index} />
                 ))}
+                {(!data || isLoading) && <CardViewLoader />}
             </Row>
             
           { data &&  <ReactPaginate

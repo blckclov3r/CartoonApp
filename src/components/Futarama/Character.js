@@ -5,6 +5,7 @@ import {  useState } from 'react';
 import { InputGroup, Row, Form } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
 import { useQuery } from 'react-query';
+import CardViewLoader from '../CardViewLoader';
 import PrevNextButton from '../PrevNextButton';
 import CardView from './CardView';
 
@@ -18,7 +19,7 @@ export default function Character() {
     return response.data;
   }
 
-  const { data } = useQuery("futuramaapi", fetchData);
+  const { data,isLoading } = useQuery("futuramaapi", fetchData);
 
     const characterPerPage = 5;
     const pagePerVisited = pageNumber * characterPerPage;
@@ -75,6 +76,12 @@ export default function Character() {
         }).map((item) => (
           <CardView {...item} key={item.Name} />
         ))}
+
+        {
+          (!data || isLoading) && 
+            <CardViewLoader />
+        }
+
       </Row>
       {data && <ReactPaginate
                 forcePage={data && (pageNumber - 1)}
