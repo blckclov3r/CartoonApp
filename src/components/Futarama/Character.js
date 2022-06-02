@@ -1,6 +1,6 @@
 
 
-import { useState } from 'react';
+import {  useState } from 'react';
 import { InputGroup, Row, Form } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
 import { useQuery } from 'react-query';
@@ -13,21 +13,21 @@ export default function Character() {
   const [pageNumber, setPageNumber] = useState(1);
 
   const fetchData = async () => {
-    const response = await fetch('https://api.sampleapis.com/cartoons/cartoons2D');
+    const response = await fetch('https://futuramaapi.herokuapp.com/api/v2/characters');
     return response.json();
   }
 
-  const { data } = useQuery("cartoons", fetchData);
+  const { data } = useQuery("futuramaapi", fetchData);
 
-    const characterPerPage = 10;
+    const characterPerPage = 5;
     const pagePerVisited = pageNumber * characterPerPage;
-    const displayCharacter = data && data.slice(pagePerVisited, pagePerVisited + characterPerPage);
+    const displayCharacter = data && data.slice(pagePerVisited-1, (pagePerVisited - 1) + characterPerPage);
 
   
     const nextPage = () => {
         if (data) {
             setPageNumber(
-                p => Math.min(p += 1, data && Math.ceil(data && data.length / 20)
+                p => Math.min(p += 1, (data && Math.ceil(data && data.length / characterPerPage))
                 )
             )
         }
@@ -47,12 +47,13 @@ export default function Character() {
         }
     }
 
+    
 
   return (
     <div>
       <div className='d-flex justify-content-between align-items-baseline'>
         <div>
-          <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} max={Math.ceil(data && data.length / 20)} pageNumber={pageNumber} />
+          <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} max={(Math.ceil(data && data.length / characterPerPage)-1)} pageNumber={pageNumber} />
         </div>
         <div>
           <InputGroup>
@@ -69,9 +70,9 @@ export default function Character() {
           if (characterSearch.trim() === "") {
             return val;
           }
-          return val.title.trim().toLowerCase().includes(characterSearch.trim().toLocaleLowerCase());
+          return val.Name.trim().toLowerCase().includes(characterSearch.trim().toLocaleLowerCase());
         }).map((item) => (
-          <CardView {...item} key={item.id} />
+          <CardView {...item} key={item.Name} />
         ))}
       </Row>
       <ReactPaginate
@@ -86,8 +87,8 @@ export default function Character() {
                 breakClassName={'page-item'}
                 breakLinkClassName={'page-link'}
                 marginPagesDisplayed={0}
-                // pageRangeDisplayed={2}
-                pageCount={Math.ceil(data && data.length / 20)} // total characters / 20  (2.5 = 3 pages)
+                pageRangeDisplayed={4}
+                pageCount={Math.ceil(data && data.length / characterPerPage)} // total characters / 20  (2.5 = 3 pages)
                 onPageChange={changePage}
 
                 previousLinkClassName={pageNumber === 1 ? ["page-link", "disabled"].join(" ") : "page-link"}
