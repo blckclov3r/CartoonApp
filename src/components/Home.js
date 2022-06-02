@@ -28,8 +28,8 @@ export default function Home() {
 
         <div className='pt-5' style={{width: "835px"}}>
           {data ? <h2>{ useData == null ? data[getRandomInt(1,50)].quote : useData }</h2> :
-             <h2 class="placeholder-glow">
-              <span class="placeholder col-5"></span>
+             <h2 className="placeholder-glow">
+              <span className="placeholder col-5"></span>
             </h2> } 
         </div>
     
