@@ -15,7 +15,7 @@ function App() {
           <NavHeader />
           <div className='main'>
               <Routes>
-                  <Route exact path="/" element={<Home />} />
+                  <Route path="/" element={<Home />} />
                   <Route path="/Futarama" element={<Cartoon />} />
                   <Route path="/Rick&Morty" element={<RickMorty />} />
                   <Route path="/Simpson" element={<Simpson />} />
