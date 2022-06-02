@@ -1,6 +1,6 @@
 import './App.css';
 import NavHeader from './components/NavHeader';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import Home from './components/Home';
 import RickMorty from './components/RickMorty/Rick&Morty';
 import Footer from './components/Footer';
@@ -10,7 +10,7 @@ import NotFound from './components/NotFound';
 
 function App() {
   return (
-     <BrowserRouter>
+     <HashRouter>
       <div className="App">
           <NavHeader />
           <div className='main'>
@@ -24,7 +24,7 @@ function App() {
           </div>
           <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
