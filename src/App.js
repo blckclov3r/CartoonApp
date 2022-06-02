@@ -6,6 +6,7 @@ import RickMorty from './components/RickMorty/Rick&Morty';
 import Footer from './components/Footer';
 import Simpson from './components/SImpson/Simpson';
 import Cartoon from './components/Futarama/Futarama';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                   <Route path="/Futarama" element={<Cartoon />} />
                   <Route path="/Rick&Morty" element={<RickMorty />} />
                   <Route path="/Simpson" element={<Simpson />} />
+                  <Route path="*" element={<NotFound />} />
               </Routes>
           </div>
           <Footer />
