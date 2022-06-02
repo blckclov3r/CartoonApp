@@ -19,7 +19,7 @@ function App() {
                   <Route path="/Futarama" element={<Cartoon />} />
                   <Route path="/Rick&Morty" element={<RickMorty />} />
                   <Route path="/Simpson" element={<Simpson />} />
-                  <Route path="*" element={<NotFound />} />
+                  <Route path="*" element={<Home />} />
               </Routes>
           </div>
           <Footer />
