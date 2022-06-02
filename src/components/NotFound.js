@@ -14,7 +14,7 @@ export default function NotFound() {
                 <p className="lead">
                     The page you’re looking for doesn’t exist.
                   </p>
-               <Link to="/">   <span class="btn btn-primary">Go Home</span></Link>
+               <Link to="/">   <span className="btn btn-primary">Go Home</span></Link>
             </div>
         </div>
         </Col>
