@@ -22,13 +22,13 @@ export default function Character() {
 
     const characterPerPage = 10;
     const pagePerVisited = pageNumber * characterPerPage;
-    const displayCharacter = data && data.slice(pagePerVisited, pagePerVisited + characterPerPage);
+    const displayCharacter = data && data.slice(pagePerVisited-1, (pagePerVisited - 1) + characterPerPage);
 
   
     const nextPage = () => {
         if (data) {
             setPageNumber(
-                p => Math.min(p += 1, data && Math.ceil(data && data.length / 20)
+                p => Math.min(p += 1, data && Math.ceil(data && data.length / characterPerPage)
                 )
             )
         }
@@ -52,7 +52,7 @@ export default function Character() {
         <div>
             <div className='d-flex justify-content-between align-items-baseline'>
                 <div>
-                    <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} max={Math.ceil(data && data.length / 20)} pageNumber={pageNumber} />
+                    <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} max={Math.ceil(data && data.length / characterPerPage)} pageNumber={pageNumber} />
                 </div>
                 <div>
                     <InputGroup>
@@ -86,9 +86,9 @@ export default function Character() {
                 pageLinkClassName={'page-link'}
                 breakClassName={'page-item'}
                 breakLinkClassName={'page-link'}
-                // marginPagesDisplayed={0}
-                // pageRangeDisplayed={9}
-                pageCount={data && Math.ceil(data.length / 20)} // total characters / 20  (2.5 = 3 pages)
+                marginPagesDisplayed={0}
+                pageRangeDisplayed={5}
+                pageCount={data && Math.ceil(data.length / characterPerPage)} // total characters / 20  (2.5 = 3 pages)
                 onPageChange={changePage}
 
                 previousLinkClassName={pageNumber === 1 ? ["page-link", "disabled"].join(" ") : "page-link"}
