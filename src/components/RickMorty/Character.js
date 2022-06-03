@@ -2,7 +2,7 @@
 
 
 import React, { useState } from 'react'
-import { Row, InputGroup, Form } from 'react-bootstrap';
+import { Row, InputGroup, Form, Col } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import CardView from './CardView';
 import ReactPaginate from 'react-paginate';
@@ -54,20 +54,20 @@ export default function Character() {
 
     return (
         <div>
-            <div className='d-flex justify-content-between align-items-baseline'>
-                <div>
+            <Row className='align-items-baseline'>
+                <Col>
                     <PrevNextButton data={data} prevPage={prevPage} nextPage={nextPage} max={Math.ceil(data && data.info.count / 20)} pageNumber={pageNumber} />
-                </div>
-                <div>
+                </Col>
+                <Col className="ms-auto col-lg-4">
                     <InputGroup>
                         <Form.Control placeholder='Search' value={characterSearch} onChange={evt => setCharacterSearch(evt.target.value)} />
                         <InputGroup.Text><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg></InputGroup.Text>
                     </InputGroup>
-                </div>
+                </Col>
 
-            </div>
+            </Row>
             <Row className='mx-auto'>
                 {( data) && data.results.filter((val) => {
                     if (characterSearch.trim() === "") {
