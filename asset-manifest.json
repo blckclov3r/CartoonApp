@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cartoon-api/static/css/main.56e0253d.css",
-    "main.js": "/cartoon-api/static/js/main.e702f1d8.js",
+    "main.js": "/cartoon-api/static/js/main.f9654aaf.js",
     "index.html": "/cartoon-api/index.html",
     "main.56e0253d.css.map": "/cartoon-api/static/css/main.56e0253d.css.map",
-    "main.e702f1d8.js.map": "/cartoon-api/static/js/main.e702f1d8.js.map"
+    "main.f9654aaf.js.map": "/cartoon-api/static/js/main.f9654aaf.js.map"
   },
   "entrypoints": [
     "static/css/main.56e0253d.css",
-    "static/js/main.e702f1d8.js"
+    "static/js/main.f9654aaf.js"
   ]
 }
