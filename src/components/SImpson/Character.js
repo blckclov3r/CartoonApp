@@ -67,6 +67,7 @@ export default function Character() {
                 </Col>
 
             </Row>
+            
             <Row>
                 {data && displayCharacter.filter((val)=>{
                        if (characterSearch.trim() === "") {

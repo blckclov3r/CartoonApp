@@ -5,8 +5,8 @@ import React from 'react'
 export default function CardViewLoader() {
   return (
      <>
-      <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+    <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -21,8 +21,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -37,8 +37,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -53,8 +53,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -69,8 +69,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -85,8 +85,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -101,8 +101,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -117,8 +117,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -133,8 +133,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -149,8 +149,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -165,8 +165,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 
@@ -181,8 +181,8 @@ export default function CardViewLoader() {
             </Card.Body>
         </Card>
      </Col>
-     <Col className='my-2'>
-         <Card style={{ width: '18rem'}} className="h-100 shadow-sm">
+     <Col className='my-2' xs={12} sm={6} md={4} xl={3}>
+         <Card  className="h-100 shadow-sm">
             <Card.Img variant="top" src="https://theinsidetrackinc.com/wp-content/uploads/2019/11/square-placeholder.jpg" className="img-fluid img-thumbnail" style={{height: "300px", width: "300px"}} />
             <Card.Header className='d-flex align-items-center placeholder-glow'>
                 <span className=' placeholder col-10'></span> 

@@ -98,7 +98,7 @@ export default function Character() {
                 pageRangeDisplayed={9}
                 pageCount={data && Math.ceil(data && data.info.count / 20)} // total characters / 20 character per page
                 onPageChange={changePage}
-
+                            
 
                 previousLinkClassName={data && data.info.prev === null ? ["page-link", "disabled"].join(" ") : "page-link"}
                 nextLinkClassName={data && data.info.next === null ? ["page-link", "disabled"].join(" ") : "page-link"}
