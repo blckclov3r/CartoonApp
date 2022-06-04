@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/cartoonapp/static/css/main.56e0253d.css",
-    "main.js": "/cartoonapp/static/js/main.2a0e4881.js",
-    "index.html": "/cartoonapp/index.html",
-    "main.56e0253d.css.map": "/cartoonapp/static/css/main.56e0253d.css.map",
-    "main.2a0e4881.js.map": "/cartoonapp/static/js/main.2a0e4881.js.map"
+    "main.css": "/CartoonApp/static/css/main.56e0253d.css",
+    "main.js": "/CartoonApp/static/js/main.2a0e4881.js",
+    "index.html": "/CartoonApp/index.html",
+    "main.56e0253d.css.map": "/CartoonApp/static/css/main.56e0253d.css.map",
+    "main.2a0e4881.js.map": "/CartoonApp/static/js/main.2a0e4881.js.map"
   },
   "entrypoints": [
     "static/css/main.56e0253d.css",
