@@ -6,7 +6,7 @@ export default function NavHeader() {
   return (
     <Navbar bg="light" expand="lg" className='shadow-sm' fixed="top">
     <Container>
-      <Link className='navbar-brand' to='/'>CARTOON-API</Link>
+      <Link className='navbar-brand' to='/'>CartoonApp</Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">

@@ -10,7 +10,7 @@ export default function Simpson() {
      <Container fluid="md" className='my-5 pt-5'>
        <Character />
        <div className="d-flex justify-content-center align-items-baseline mt-5">
-          data source:  <code className="ms-1">https://thesimpsonsquoteapi.glitch.me</code> 
+       <code className='text-dark'>data source:</code> <code className="ms-1">https://thesimpsonsquoteapi.glitch.me</code> 
        </div>
  </Container>
   )

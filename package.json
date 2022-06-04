@@ -1,6 +1,6 @@
 {
-  "homepage": "http://blckclov3r.github.io/cartoon-api",
-  "name": "cartoon-api",
+  "homepage": "http://blckclov3r.github.io/cartoonapp",
+  "name": "cartoonapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
