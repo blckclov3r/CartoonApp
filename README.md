@@ -26,3 +26,6 @@ This is a personal project built in my spare time for learning purposes.
 * React
 * Bootstrap5
 * Axios
+
+## License
+* [MIT](LICENSE)
